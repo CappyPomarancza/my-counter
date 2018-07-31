@@ -2,17 +2,17 @@ import React from 'react'
 
 
 class Counter extends React.Component {
-    constructor(){
+    constructor() {
         super()
         this.state = {
-            number: this.props.number 
+            number: this.props.number
         }
     }
 
     componentDidMount() {
         const lastState = JSON.parse(localStorage.getItem('cappy-react-counter'))
 
-        if(lastState===null) return 
+        if (lastState === null) return
         this.setState(lastState)
     }
     componentWillUnmount() {
@@ -20,7 +20,7 @@ class Counter extends React.Component {
     }
 
 
-    incHandler =() => {
+    incHandler = () => {
         this.setState({
             number: this.state.number + 1
         })
@@ -31,24 +31,22 @@ class Counter extends React.Component {
         })
     }
 
-    render (){
-        return(
+    render() {
+        return (
             <div>
                 <h1>{this.state.number}</h1>
                 <button
                     onClick={this.incHandler}
-                    >
+                >
                     +
                     </button>
-                    <button
+                <button
                     onClick={this.decHandler}
-                    >
+                >
                     -
                     </button>
             </div>
         )
     }
-
-
 }
 export default Counter
