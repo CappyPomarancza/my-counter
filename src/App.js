@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import Counter from './views/Counter';
+import Counter from './views/Counter'
+import Typography from '@material-ui/core/Typography'
+import { Card, colors } from '@material-ui/core'
+
+
+
 
 
 const App = () => (
+
   <div>
-    
-      <div>
-        <h3>Hello In My Counter </h3>
-        <Counter number = {0}/>
-      </div>
-    
+    <Counter number={0} />
   </div>
 )
 

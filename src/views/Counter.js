@@ -1,14 +1,6 @@
 import React from 'react'
-//import RaisedButton from 'material-ui/RaisedButton'
 import Button from '@material-ui/core/Button'
-// const styles = theme => ({
-//     button: {
-//       margin: theme.spacing.unit,
-//     },
-//     input: {
-//       display: 'none',
-//     },
-//   });
+import MyFancyPaper from '../Components/MyFancyPaper';
 
 class Counter extends React.Component {
 
@@ -16,8 +8,6 @@ class Counter extends React.Component {
         number: this.props.number
     }
     
-
-
     componentDidMount() {
         const lastState = JSON.parse(localStorage.getItem('cappy-react-counter'))
 
@@ -57,35 +47,36 @@ class Counter extends React.Component {
 
     render() {
         return (
-            <div>
+            <MyFancyPaper>
+                <h3>Hello In My Counter </h3>
                 <h1>{this.state.number}</h1>
-                <button
+                <Button variant="contained" color="primary"
                     onClick={this.incHandler}
                 >
                     +
-                    </button>
-                    <button
+                    </Button>
+                    <Button variant="contained" color="primary"
                     onClick={this.incHandler5}
                 >
                     + 5
-                    </button>
-                <button
+                    </Button>
+                <Button variant="contained" color="primary"
                     onClick={this.decHandler}
                 >
                     -
-                    </button>
+                    </Button>
                 
-                <button
+                <Button variant="contained" color="primary"
                     onClick={this.decHandler5}
                 >
                     - 5
-                    </button>
-                    <Button color='secondary'
+                    </Button>
+                    <Button variant="contained" color="secondary"
                     onClick={this.reset}
                 >
                     reset
                     </Button>
-            </div>
+            </MyFancyPaper>
         )
     }
 }
