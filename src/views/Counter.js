@@ -1,12 +1,21 @@
 import React from 'react'
 //import RaisedButton from 'material-ui/RaisedButton'
-
+import Button from '@material-ui/core/Button'
+// const styles = theme => ({
+//     button: {
+//       margin: theme.spacing.unit,
+//     },
+//     input: {
+//       display: 'none',
+//     },
+//   });
 
 class Counter extends React.Component {
 
     state = {
         number: this.props.number
     }
+    
 
 
     componentDidMount() {
@@ -71,11 +80,11 @@ class Counter extends React.Component {
                 >
                     - 5
                     </button>
-                    <button
+                    <Button color='secondary'
                     onClick={this.reset}
                 >
                     reset
-                    </button>
+                    </Button>
             </div>
         )
     }
