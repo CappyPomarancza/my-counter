@@ -55,16 +55,17 @@ class Counter extends React.Component {
                 >
                     +
                     </button>
+                    <button
+                    onClick={this.incHandler5}
+                >
+                    + 5
+                    </button>
                 <button
                     onClick={this.decHandler}
                 >
                     -
                     </button>
-                <button
-                    onClick={this.incHandler5}
-                >
-                    + 5
-                    </button>
+                
                 <button
                     onClick={this.decHandler5}
                 >
