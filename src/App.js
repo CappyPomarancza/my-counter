@@ -4,11 +4,12 @@ import Counter from './views/Counter';
 
 const App = () => (
   <div>
-    <Router> 
+    
       <div>
-        <Route path={'/counter'} component={()=> <Counter number = {0}/>} />
+        <h3>Hello In My Counter </h3>
+        <Counter number = {0}/>
       </div>
-    </Router>
+    
   </div>
 )
 
