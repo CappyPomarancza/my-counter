@@ -3,15 +3,15 @@ import Button from '@material-ui/core/Button'
 import MyFancyPaper from '../Components/MyFancyPaper';
 
 class Counter extends React.Component {
-
-    state = {
-        number: this.props.number
+    constructor(props) {
+        super(props)
+        this.state = {
+            number: 0
+        }
     }
     
     componentDidMount() {
-        const lastState = JSON.parse(localStorage.getItem('cappy-react-counter'))
-
-        if (lastState === null) return
+        const lastState = JSON.parse(localStorage.getItem('cappy-react-counter')) || this.state
         this.setState(lastState)
     }
     componentWillUnmount() {
@@ -20,29 +20,49 @@ class Counter extends React.Component {
 
 
     incHandler = () => {
+        const number = {
+            number: this.state.number + 1
+        }
         this.setState({
             number: this.state.number + 1
         })
+        localStorage.setItem('cappy-react-counter', JSON.stringify(number))
     }
     incHandler5 = () => {
+        const number = {
+            number: this.state.number + 5
+        }
         this.setState({
             number: this.state.number + 5
         })
+        localStorage.setItem('cappy-react-counter', JSON.stringify(number))
     }
     decHandler = () => {
+        const number = {
+            number: this.state.number - 1
+        }
         this.setState({
             number: this.state.number - 1
         })
+        localStorage.setItem('cappy-react-counter', JSON.stringify(number))
     }
     decHandler5 = () => {
+        const number = {
+            number: this.state.number - 5
+        }
         this.setState({
             number: this.state.number - 5
         })
+        localStorage.setItem('cappy-react-counter', JSON.stringify(number))
     }
     reset = () => {
+        const number = {
+            number: this.state.number * 0  
+        }
         this.setState({
-            number: this.state.number= 0
+            number: this.state.number = 0
         })
+        localStorage.setItem('cappy-react-counter', JSON.stringify(number))
     }
 
     render() {
